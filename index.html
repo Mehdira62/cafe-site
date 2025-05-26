@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کافه بازی | Mafia Cafe</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap');
+    * {
+      box-sizing: border-box;
+      font-family: 'Vazirmatn', sans-serif;
+    }
+    body {
+      margin: 0;
+      background-color: #f5f0e6;
+      color: #3e2c2c;
+    }
+    header {
+      background-color: #3e2c2c;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #8b5e3c;
+      text-align: center;
+      padding: 1rem;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 2rem;
+    }
+    h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.5rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background-color: white;
+      margin: 0.5rem 0;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      margin: 1rem 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    form {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      max-width: 600px;
+      margin: auto;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.75rem;
+      background-color: #8b5e3c;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #3e2c2c;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>☕ کافه بازی | Mafia Game Cafe 🎭</h1>
+    <p>محیطی گرم برای نوشیدنی، خوراکی و بازی مافیا</p>
+  </header>
+
+  <nav>
+    <a href="#menu">منو</a>
+    <a href="#gallery">گالری</a>
+    <a href="#reserve">رزرو</a>
+    <a href="#rules">قوانین</a>
+    <a href="#reviews">نظرات</a>
+    <a href="#contact">تماس با ما</a>
+  </nav>
+
+  <section id="menu">
+    <h2>منوی کافه</h2>
+    <h3>☕ نوشیدنی‌های گرم</h3>
+    <ul>
+      <li>اسپرسو - ۳۰،۰۰۰ تومان</li>
+      <li>لاته - ۴۵،۰۰۰ تومان</li>
+    </ul>
+    <h3>🥤 نوشیدنی‌های سرد</h3>
+    <ul>
+      <li>آیس لاته - ۴۵،۰۰۰ تومان</li>
+      <li>موهیتو - ۵۰،۰۰۰ تومان</li>
+    </ul>
+    <h3>🍓 شیک و اسموتی</h3>
+    <ul>
+      <li>شیک شکلات - ۶۵،۰۰۰ تومان</li>
+      <li>اسموتی توت‌فرنگی - ۶۰،۰۰۰ تومان</li>
+    </ul>
+    <h3>🍳 خوراکی و صبحانه</h3>
+    <ul>
+      <li>صبحانه انگلیسی - ۹۰،۰۰۰ تومان</li>
+      <li>ناگت مرغ - ۸۵،۰۰۰ تومان</li>
+    </ul>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <h2>گالری تصاویر</h2>
+    <img src="1.jpg" alt="صبحانه انگلیسی">
+    <img src="111.jpg" alt="کاپوچینو و فضا">
+    <img src="WhatsApp Image 2022-07-21 at 12.46.20 PM.jpeg" alt="لوگوی کافه بازی">
+  </section>
+
+  <section id="reserve">
+    <h2>فرم رزرو میز / بازی مافیا</h2>
+    <form onsubmit="sendToWhatsApp(event)">
+      <label>نام و نام خانوادگی:
+        <input type="text" id="name" required>
+      </label>
+      <label>شماره تماس (واتساپ):
+        <input type="tel" id="phone" required>
+      </label>
+      <label>تعداد نفرات:
+        <input type="number" id="count" min="1">
+      </label>
+      <label>تاریخ:
+        <input type="date" id="date">
+      </label>
+      <label>ساعت:
+        <input type="time" id="time">
+      </label>
+      <label>نوع رزرو:
+        <select id="type">
+          <option>نوشیدنی و خوراکی</option>
+          <option>شرکت در بازی مافیا</option>
+          <option>بازی مافیا خصوصی (رزرو میز کامل)</option>
+          <option>رزرو کل کافه</option>
+        </select>
+      </label>
+      <button type="submit">ارسال به واتساپ</button>
+    </form>
+  </section>
+
+  <section id="rules">
+    <h2>قوانین بازی مافیا در کافه</h2>
+    <ul>
+      <li>حداقل 8 نفر برای شروع بازی</li>
+      <li>در فاز شب سکوت کامل الزامی است</li>
+      <li>افشاگری نقش ممنوع است</li>
+      <li>داوری توسط برگزارکننده کافه انجام می‌شود</li>
+    </ul>
+  </section>
+
+  <section id="reviews">
+    <h2>نظرات مشتریان</h2>
+    <ul>
+      <li>«بازی مافیا توی این کافه بی‌نظیره! قهوه‌شم عالیه.» — رضا از کرمان</li>
+      <li>«همه چیز مرتب و حرفه‌ای بود، حتماً باز هم میام.» — نازنین</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>تماس با ما</h2>
+    <p>📍 کرمان، خیابان ...</p>
+    <p>📱 <a href="https://wa.me/989133432850">واتساپ: 09133432850</a></p>
+    <p>📷 اینستاگرام: <a href="https://instagram.com/cafe_baazi">@cafe_baazi</a></p>
+  </section>
+
+  <footer>
+    © 2025 تمامی حقوق متعلق به کافه بازی است.
+  </footer>
+
+  <script>
+    function sendToWhatsApp(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const count = document.getElementById('count').value;
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+      const type = document.getElementById('type').value;
+
+      const message = `سلام، رزرو برای ${count} نفر به نام ${name}%0Aتاریخ: ${date} ساعت: ${time}%0Aنوع رزرو: ${type}%0Aشماره تماس: ${phone}`;
+      const url = `https://wa.me/989133432850?text=${message}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>
